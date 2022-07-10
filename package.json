@@ -1,8 +1,8 @@
 {
+  "homepage": "https://adarsh-dayanand.github.io/exercise-app/",
   "name": "exerice-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://adarsh-dayanand.github.io/exercise-app/",
   "dependencies": {
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
