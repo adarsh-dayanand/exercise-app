@@ -29,7 +29,7 @@ const ExerciseDetail = () => {
     dispatch(fetchExerciseVideo(exerciseDetails.name));
     dispatch(fetchSimilarExercises(exerciseDetails.target));
     dispatch(fetchSimilarEquipments(exerciseDetails.equipment));
-  }, [id]);
+  }, [dispatch, exerciseDetails.equipment, exerciseDetails.target]);
 
   return (
     <Box>

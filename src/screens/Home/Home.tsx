@@ -1,12 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Box } from "@mui/material";
 import { Banner, Exercises, SearchExercises } from "../../components";
-import { bodyPart, fetchBodyParts } from "../../redux/bodypart";
-import { useAppDispatch, useAppSelector } from "../../redux/hooks";
-import {
-  exercises,
-  fetchExercises,
-} from "../../redux/exercises";
+import { fetchBodyParts } from "../../redux/bodypart";
+import { useAppDispatch } from "../../redux/hooks";
+import { fetchExercises } from "../../redux/exercises";
 
 const Home = () => {
   const dispatch = useAppDispatch();
