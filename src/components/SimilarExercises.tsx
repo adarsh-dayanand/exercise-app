@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Typography, Stack } from '@mui/material';
 import { HorizontalScrollBar } from '.';
-import Loader from './Loader';
+import { Loader } from '.';
 
 const SimilarExercises = ({ targetMuscleExercises, equipmentExercises }: any) => {
   return (

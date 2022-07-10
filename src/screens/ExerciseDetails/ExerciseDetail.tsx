@@ -26,11 +26,9 @@ const ExerciseDetail = () => {
 
   useEffect(() => {
     dispatch(fetchExerciseDetails(id));
-    if (exerciseDetails.id === id) {
-      dispatch(fetchExerciseVideo(exerciseDetails.name));
-      dispatch(fetchSimilarExercises(exerciseDetails.target));
-      dispatch(fetchSimilarEquipments(exerciseDetails.equipment));
-    }
+    dispatch(fetchExerciseVideo(exerciseDetails.name));
+    dispatch(fetchSimilarExercises(exerciseDetails.target));
+    dispatch(fetchSimilarEquipments(exerciseDetails.equipment));
   }, [id]);
 
   return (
@@ -44,7 +42,8 @@ const ExerciseDetail = () => {
       )}
       {exerciseDetails.id === id && (
         <SimilarExercises
-          targetMuscleExercises={similarExercise} equipmentExercises={similarEquipmentExercise}
+          targetMuscleExercises={similarExercise}
+          equipmentExercises={similarEquipmentExercise}
         />
       )}
     </Box>

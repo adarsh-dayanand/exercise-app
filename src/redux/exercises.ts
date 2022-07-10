@@ -87,7 +87,7 @@ export const fetchExerciseVideo = createAsyncThunk(
   "exerices/fetchExerciseVideo",
   async (name: String) => {
     const response = await axios.get(
-      encodeURI(`${process.env.REACT_APP_YOUTUBE_SEARCH_URL}/search?query=${name}`),
+      `${process.env.REACT_APP_YOUTUBE_SEARCH_URL}/search?query=${name}`,
       {
         headers: {
           "X-RapidAPI-Key": process.env.REACT_APP_RAPID_API_KEY || "",
@@ -103,7 +103,7 @@ export const fetchSimilarExercises = createAsyncThunk(
   "exerices/fetchSimilarExercises",
   async (target: String) => {
     const response = await axios.get(
-      encodeURI(`${process.env.REACT_APP_ENDPOINT}/exercises/target/${target}`),
+      `${process.env.REACT_APP_ENDPOINT}/target/${target}`,
       {
         headers: {
           "X-RapidAPI-Key": process.env.REACT_APP_RAPID_API_KEY || "",
@@ -111,7 +111,6 @@ export const fetchSimilarExercises = createAsyncThunk(
         },
       }
     );
-    console.log("TARGET => ", response.data);
     return response.data;
   }
 );
@@ -120,7 +119,7 @@ export const fetchSimilarEquipments = createAsyncThunk(
   "exerices/fetchSimilarEquipments",
   async (equipment: String) => {
     const response = await axios.get(
-     encodeURI( `${process.env.REACT_APP_ENDPOINT}/exercises/equipment/${equipment}`),
+      `${process.env.REACT_APP_ENDPOINT}/equipment/${equipment}`,
       {
         headers: {
           "X-RapidAPI-Key": process.env.REACT_APP_RAPID_API_KEY || "",
@@ -128,8 +127,6 @@ export const fetchSimilarEquipments = createAsyncThunk(
         },
       }
     );
-    console.log("equipment => ", response.data);
-
     return response.data;
   }
 );
@@ -221,11 +218,16 @@ export const exerciseSlice = createSlice({
 export const { setSearchedExercise } = exerciseSlice.actions;
 
 export const exercises = (state: RootState) => state.exercises.exercisesList;
-export const searchedExercise = (state: RootState) => state.exercises.searchedExercises;
-export const exerciseDetail = (state: RootState) => state.exercises.exerciseDetail;
-export const exerciseVideoDetail = (state: RootState) => state.exercises.exerciseVideoDetail;
-export const similarExercises = (state: RootState) => state.exercises.similarExercises;
-export const similarEquipmentExercises = (state: RootState) => state.exercises.similarEquipment;
+export const searchedExercise = (state: RootState) =>
+  state.exercises.searchedExercises;
+export const exerciseDetail = (state: RootState) =>
+  state.exercises.exerciseDetail;
+export const exerciseVideoDetail = (state: RootState) =>
+  state.exercises.exerciseVideoDetail;
+export const similarExercises = (state: RootState) =>
+  state.exercises.similarExercises;
+export const similarEquipmentExercises = (state: RootState) =>
+  state.exercises.similarEquipment;
 
 export const exerciseStatus = (state: RootState) => state.exercises.status;
 

@@ -22,8 +22,8 @@ const Navbar = () => {
 
 const styles = {
     image: {
-        width: '30px',
-        height: '30px',
+        width: '70px',
+        height: '50px',
         margin: '0 20px'
     },
     home: {
