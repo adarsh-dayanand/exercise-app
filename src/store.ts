@@ -1,9 +1,11 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import exerciseReducer from './redux/exercises';
+import bodypartReducer from './redux/bodypart';
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
+    exercises: exerciseReducer,
+    bodypart: bodypartReducer
   },
 });
 
